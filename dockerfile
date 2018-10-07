@@ -13,6 +13,7 @@ RUN npm install
 
 ## Add application code
 COPY ./lib /src/lib
+## Add application code
 COPY ./test /src/test
 
 ## Add the nodemon configuration file
