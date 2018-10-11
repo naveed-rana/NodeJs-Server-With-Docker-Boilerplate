@@ -7,20 +7,11 @@ RUN mkdir /src
 ## Specify the "working directory" for the rest of the Dockerfile
 WORKDIR /src
 
-COPY ./package.json /src/package.json
-COPY ./package-lock.json /src/package-lock.json
+COPY ./package*.json ./
 RUN npm install
 
 ## Add application code
-COPY ./lib /src/lib
-## Add application code
-COPY ./test /src/test
-
-## Add the nodemon configuration file
-COPY ./nodemon.json /src/nodemon.json
-
-## Add the tsconfig configuration file
-COPY ./tsconfig.json /src/tsconfig.json
+COPY . .
 
 ## Set environment to "development" by default
 ENV NODE_ENV development

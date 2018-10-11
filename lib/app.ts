@@ -11,7 +11,7 @@ var dbURI = require('./config/key');
 //creating App
 const App = express();
 App.use(bodyParser.urlencoded({extended: true}));
-
+//some cmnt
 // Body Parser implement
 App.use(bodyParser.json());
 App.use(session({secret: "@#^&$!#_)(@!#)**(@^%*&^*#${}|{@#$@#$(#@", resave: true, saveUninitialized: true}));
