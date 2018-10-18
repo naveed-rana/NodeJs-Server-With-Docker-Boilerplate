@@ -3,13 +3,9 @@
 # dependencies
 /node_modules
 
-/.vscode
-
-/dist/
-
 /config/dev.js
 # testing
-/coverage/
+/coverage
 
 # production
 push.sh

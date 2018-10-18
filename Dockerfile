@@ -1,23 +1,18 @@
-## Specifies the base image we're extending
 FROM node:8
 
-## Create base directory
-RUN mkdir /src
+# working directory in docker 
+WORKDIR /user/src/app
 
-## Specify the "working directory" for the rest of the Dockerfile
-WORKDIR /src
+# copy package.json and package-lock-json
+COPY package*.json ./
 
-COPY ./package*.json ./
+#  command for running dependicies in container
 RUN npm install
 
-## Add application code
+# copy all the curren directories from local to container
 COPY . .
 
-## Set environment to "development" by default
-ENV NODE_ENV development
+# port of running our serevr
+EXPOSE  8888
 
-## Allows port 3000 to be publicly available
-EXPOSE 8080
-
-## The command uses nodemon to run the application
-CMD ["npm", "run", "nodemon"]
+CMD [ "npm", "run" , "nodemon" ]

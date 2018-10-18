@@ -1,9 +1,5 @@
-import App from "./app";
-
-//get env PORT from server or use 8080
-const PORT = process.env.PORT || 8080;
-
-//App listen
+import {App} from "./app";
+const PORT = process.env.PORT || 8888;
 
 App.listen(PORT, () => {
   console.log("Express running on port " + PORT);
